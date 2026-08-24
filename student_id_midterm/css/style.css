@@ -213,7 +213,7 @@ button {
     .main-content {
         grid-template-columns: 1fr;
     }
-    
+
     .header {
         flex-direction: column;
         align-items: flex-start;
@@ -306,8 +306,8 @@ body.dark-mode {
 }
 
 /* หัวข้อและข้อความหลัก */
-body.dark-mode h1, 
-body.dark-mode h2, 
+body.dark-mode h1,
+body.dark-mode h2,
 body.dark-mode h3 {
     color: #f8fafc;
 }
@@ -336,12 +336,12 @@ body.dark-mode .stat-box {
     color: #f8fafc;
 }
 
-body.dark-mode .seats-left{
+body.dark-mode .seats-left {
     font-weight: bold;
     color: rgb(146, 255, 146);
 }
 
-body.dark-mode .seats-left.full{
+body.dark-mode .seats-left.full {
     font-weight: bold;
     color: rgb(255, 149, 149);
 }
@@ -374,4 +374,42 @@ body.dark-mode .btn-secondary,
 body.dark-mode button[type="button"] {
     background-color: #334155;
     color: #f8fafc;
+}
+
+/* ปุ่มลงทะเบียน */
+.btn-register {
+    padding: 6px 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.btn-register:hover {
+    background-color: #1d4ed8;
+}
+
+/* ปุ่มเมื่อลงทะเบียนแล้ว */
+.btn-register.registered {
+    background-color: #16a34a;
+}
+
+.btn-register.registered:hover {
+    background-color: #15803d;
+}
+
+/* ปุ่มเมื่อที่นั่งเต็ม (Disabled) */
+.btn-register:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* ปรับแต่งส่วนท้ายการ์ดให้ปุ่มวางชิดขวา */
+.event-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
