@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header Zone -->
+        <header class="header">
+            <h1>Smart Event Hub</h1>
+            <div class="header-actions">
+                <button type="button" id="theme-toggle" class="btn-secondary">Dark Mode</button>
+                <button type="button" id="open-modal-btn" class="btn-primary">+ เพิ่มกิจกรรม</button>
+            </div>
+        </header>
+
+        <!-- Main Content Zone -->
+        <main class="main-content">
+            <!-- Grid ฝั่งซ้าย: สถิติภาพรวม -->
+            <section class="card stats-card">
+                <h2>สถิติภาพรวม</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">กิจกรรมทั้งหมด</span>
+                        <span class="stat-value" id="stat-total">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">ลงทะเบียนแล้ว</span>
+                        <span class="stat-value" id="stat-registered">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">ที่นั่งว่างรวม</span>
+                        <span class="stat-value" id="stat-available">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid ฝั่งขวา: ค้นหาและกรองข้อมูล -->
+            <section class="card filter-card">
+                <h2>ค้นหาและกรองข้อมูล</h2>
+                <form id="filter-form">
+                    <div class="form-group">
+                        <label for="search-keyword">ค้นหากิจกรรม</label>
+                        <input type="text" id="search-keyword" placeholder="พิมพ์คำค้นหา...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category-filter">ประเภทกิจกรรม</label>
+                        <select id="category-filter">
+                            <option value="ALL">ทั้งหมด (ALL)</option>
+                            <option value="Design">ดีไซน์(Design)</option>
+                            <option value="Tech">เทคโนโลยี(Tech)</option>
+                            <option value="Business">ธุรกิจ(Business)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sort-by">เรียงลำดับตาม</label>
+                        <select id="sort-by">
+                            <option value="date-asc">วันที่ (น้อยไปมาก)</option>
+                            <option value="date-desc">วันที่ (มากไปน้อย)</option>
+                            <option value="name-asc">ชื่อกิจกรรม (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <button type="reset" id="reset-filter-btn"
+                        class="btn-secondary full-width">คืนค่าข้อมูลเริ่มต้น</button>
+                </form>
+            </section>
+
+            <section class="card events-section">
+                <h2>รายการกิจกรรมทั้งหมด</h2>
+                <div id="events-container" class="events-grid">
+                </div>
+            </section>
+        </main>
+
+        <!-- Pop-up Modal (เริ่มต้นซ่อนไว้ด้วยคลาส hidden) -->
+        <div id="event-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>เพิ่มกิจกรรมและเวิร์กช็อป</h2>
+                    <button type="button" id="close-modal-x" class="close-btn">&times;</button>
+                </div>
+
+                <form id="add-event-form">
+                    <div class="form-group">
+                        <label for="event-title">ชื่อกิจกรรม *</label>
+                        <input type="text" id="event-title" required placeholder="ระบุชื่อกิจกรรม">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-category">ประเภท *</label>
+                        <select id="event-category" required>
+                            <option value="Design">ดีไซน์(Design)</option>
+                            <option value="Tech">เทคโนโลยี(Tech)</option>
+                            <option value="Business">ธุรกิจ(Business)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-date">วันที่จัดกิจกรรม *</label>
+                        <input type="date" id="event-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-seats">จำนวนที่นั่งเปิดรับ *</label>
+                        <input type="number" id="event-seats" min="1" required placeholder="ระบุจำนวนที่นั่ง เช่น 30">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-description">รายละเอียดกิจกรรม</label>
+                        <textarea id="event-description" rows="3" placeholder="กรอกรายละเอียดเพิ่มเติม..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">บันทึกกิจกรรม</button>
+                        <button type="button" id="cancel-modal-btn" class="btn-secondary">ยกเลิก</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

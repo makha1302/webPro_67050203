@@ -1,0 +1,377 @@
+/* --- Global Reset & Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 24px;
+}
+
+.app-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Header Section --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: #1e293b;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* --- Main Layout (Grid 2 Columns) --- */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* --- Card Styles --- */
+.card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+/* --- Stats Component --- */
+.stats-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #555;
+}
+
+.stat-label {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+/* --- Form Controls --- */
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+}
+
+/* --- Buttons --- */
+button {
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* --- Pop-up Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 1.3rem;
+    color: #0f172a;
+}
+
+.close-btn {
+    background: none;
+    font-size: 1.5rem;
+    color: #64748b;
+    padding: 0;
+}
+
+.close-btn:hover {
+    color: #0f172a;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Utility class สำหรับสั่งซ่อน Modal */
+.hidden {
+    display: none !important;
+}
+
+/* --- Responsive Layout (หน้าจอจอมือถือ) --- */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* เลย์เอาต์เรียงต่อกันเป็นบล็อกชัดเจน */
+.events-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* ตกแต่งการ์ดแบบเรียบง่ายสไตล์เด็กทำส่งอาจารย์ */
+.event-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px 15px;
+}
+
+/* หัวการ์ด */
+.event-card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* Badge แบบป้ายข้อความธรรมดา */
+.badge {
+    font-weight: bold;
+    color: #333;
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+}
+
+.event-date {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* เนื้อหา */
+.event-card h3 {
+    margin: 4px 0;
+    font-size: 1.05rem;
+    color: #000;
+}
+
+.event-speaker {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.event-desc {
+    margin: 6px 0 10px 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* ท้ายการ์ด */
+.event-card-footer {
+    border-top: 1px dashed #ddd;
+    padding-top: 8px;
+    font-size: 0.85rem;
+}
+
+.seats-left {
+    font-weight: bold;
+    color: green;
+}
+
+.seats-left.full {
+    color: red;
+}
+
+.events-section {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+/* ==================== DARK MODE STYLE ==================== */
+body.dark-mode {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+/* หัวข้อและข้อความหลัก */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
+    color: #f8fafc;
+}
+
+/* การ์ดและกล่องหลัก */
+body.dark-mode .card,
+body.dark-mode .event-card {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+/* ข้อความย่อย เช่น วิทยากร / วันที่ / คำอธิบาย */
+body.dark-mode .event-speaker,
+body.dark-mode .event-date,
+body.dark-mode .event-desc,
+body.dark-mode label {
+    color: #94a3b8;
+}
+
+/* กล่องสถิติย่อยด้านซ้าย */
+body.dark-mode .stat-item,
+body.dark-mode .stat-box {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode .seats-left{
+    font-weight: bold;
+    color: rgb(146, 255, 146);
+}
+
+body.dark-mode .seats-left.full{
+    font-weight: bold;
+    color: rgb(255, 149, 149);
+}
+
+/* ช่องกรอกข้อมูล ค้นหา ดร็อปดาวน์ */
+body.dark-mode input[type="text"],
+body.dark-mode select {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border-color: #334155;
+}
+
+body.dark-mode input::placeholder {
+    color: #64748b;
+}
+
+/* ปุ่มและป้าย */
+body.dark-mode .badge {
+    background-color: #312e81;
+    color: #c7d2fe;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #334155;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+body.dark-mode .btn-secondary,
+body.dark-mode button[type="button"] {
+    background-color: #334155;
+    color: #f8fafc;
+}
