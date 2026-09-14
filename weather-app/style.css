@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Consolas, monospace;
+  background: #f0f0f0;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+}
+
+.app {
+  background: #ffffff;
+  width: 100%;
+  max-width: 380px;
+  border: 2px solid #2d3436;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.title-row {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #b2bec3;
+  padding-bottom: 12px;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #2d3436;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+#searchBtn {
+  padding: 8px 14px;
+  border: 1px solid #2d3436;
+  border-radius: 2px;
+  background: #fff;
+  color: #2d3436;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  background: #eee;
+}
+
+.status {
+  min-height: 20px;
+  font-size: 14px;
+  color: #636e72;
+  text-align: center;
+}
+
+.status.error {
+  color: #d63031;
+  font-weight: bold;
+}
+
+.weather-card {
+  border: 1px solid #2d3436;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+}
+
+.temp-row {
+  font-size: 28px;
+  margin: 0 0 6px;
+}
+
+.weather-card #cityName {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: #2d3436;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 15px;
+}

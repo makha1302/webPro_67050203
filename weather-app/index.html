@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <div class="title-row">
+      <span>⛅ Weather Dashboard</span>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Bangkok" value="Bangkok">
+      <button id="searchBtn">ค้นหา</button>
+    </div>
+
+    <p id="loading" class="status"></p>
+    <p id="errorMessage" class="status error"></p>
+
+    <div id="weatherCard" class="weather-card" hidden>
+      <p class="temp-row">
+        <span id="tempIcon">☀️</span>
+        <span id="temp">32°C</span>
+      </p>
+      <p id="cityName">Bangkok, TH</p>
+
+      <div class="details">
+        <span>💧 <span id="humidity">62%</span></span>
+        <span>💨 <span id="wind">3.6 m/s</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
